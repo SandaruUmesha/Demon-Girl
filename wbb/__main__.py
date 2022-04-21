@@ -85,7 +85,7 @@ async def start_bot():
             )
 
         else:
-            await app.send_message(LOG_GROUP_ID, "Bot started!")
+            await app.send_message(LOG_GROUP_ID, "I'm Online Now! 💫")
     except Exception:
         pass
 
@@ -104,22 +104,22 @@ home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Commands ❓", callback_data="bot_commands"
+                text="❓Commands Help", callback_data="bot_commands"
             ),
             InlineKeyboardButton(
-                text="Repo ❤️",
-                url="https://github.com/rozari0/NezukoBot",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="System Stats 🖥",
-                callback_data="stats_callback",
+                text="🧑‍💻 Donate",
+                url="url="https://t.me/Sithumj",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="Add Me To Your Group⚡",
+                text="🙋‍♀️ Network",
+                url="url="https://t.me/darklabu",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="➕Add Me To Your Group➕",
                 url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
             )
         ],
@@ -128,7 +128,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
 
 home_text_pm = (
     f"Hey there! My name is {BOT_NAME}. I can manage your "
-    + "group with lots of useful features, feel free to "
+    + "I can help manage your groups And Music player&Video player with useful features, feel free to add me to your groups! "
     + "add me to your group."
 )
 
@@ -158,7 +158,7 @@ keyboard = InlineKeyboardMarkup(
 @app.on_message(filters.command("start"))
 async def start(_, message):
     if message.chat.type != "private":
-        return await message.reply_photo(photo="https://cdn.awwni.me/2gj9h.jpg",
+        return await message.reply_photo(photo="https://telegra.ph/file/c2caffd7ce27451d41a64.jpg",
             caption="Pm Me For More Details.", reply_markup=keyboard
         )
     if len(message.text.split()) > 1:
@@ -181,7 +181,7 @@ async def start(_, message):
                 reply_markup=keyb,
             )
     else:
-        await message.reply_photo(photo="https://cdn.awwni.me/2gj9h.jpg",
+        await message.reply_photo(photo="https://telegra.ph/file/c2caffd7ce27451d41a64.jpg",
             caption=home_text_pm,
             reply_markup=home_keyboard_pm,
         )
